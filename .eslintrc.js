@@ -11,13 +11,14 @@ module.exports = {
 		node: true,
 		es6: true,
 	},
-	plugins: ['simple-import-sort'],
+	plugins: ['@typescript-eslint', 'simple-import-sort'],
 	settings: {
 		react: {
 			version: 'detect',
 		},
 	},
 	extends: [
+		'plugin:@typescript-eslint/recommended',
 		'eslint:recommended',
 		'plugin:jsx-a11y/recommended',
 		'plugin:react/recommended',
@@ -31,7 +32,8 @@ module.exports = {
 		'no-console': 'error',
 		'react/react-in-jsx-scope': 'off',
 		'react/prop-types': 'off',
-		'simple-import-sort/sort': 'error',
 		'unicorn/filename-case': 'off',
+		'simple-import-sort/imports': 'error',
+		'simple-import-sort/exports': 'error',
 	},
 }

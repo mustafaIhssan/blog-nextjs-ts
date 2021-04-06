@@ -1,9 +1,11 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-import xw from 'twin.macro'
 import styled from '@emotion/styled'
+import Head from 'next/head'
+import xw from 'twin.macro'
 
-const title: string = 'My New Blog Support Typescript'
+import styles from '../styles/Home.module.css'
+
+const title = 'My New Blog Support Typescript'
+
 const Button = styled.button(xw`
   bg-indigo-600
   hover:bg-indigo-500
@@ -27,7 +29,7 @@ export default function Home() {
 			<main className={styles.main}>
 				<h1 className={styles.title}>{title}</h1>
 
-				<Button>Emotion + Tailwind</Button>
+				<Button>Emotion + Tailwind +</Button>
 			</main>
 		</div>
 	)
