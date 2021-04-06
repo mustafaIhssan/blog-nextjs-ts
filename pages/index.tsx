@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
+const title: string= "My New Blog Support Typescript"
+
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -11,7 +13,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          {title}
         </h1>
 
         <p className={styles.description}>
