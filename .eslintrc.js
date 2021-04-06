@@ -31,6 +31,7 @@ module.exports = {
 	rules: {
 		'no-console': 'error',
 		'react/react-in-jsx-scope': 'off',
+		'unicorn/prevent-abbreviations': 'off',
 		'react/prop-types': 'off',
 		'unicorn/filename-case': 'off',
 		'simple-import-sort/imports': 'error',
