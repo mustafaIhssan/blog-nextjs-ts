@@ -26,11 +26,8 @@ module.exports = {
 		'plugin:unicorn/recommended',
 		'plugin:security/recommended',
 		'plugin:react-hooks/recommended',
-		'prettier/@typescript-eslint',
-		'plugin:prettier/recommended',
 	],
 	rules: {
-		'prettier/prettier': ['error', {}, { usePrettierrc: true }],
 		'no-console': 'error',
 		'react/react-in-jsx-scope': 'off',
 		'react/prop-types': 'off',

@@ -8,8 +8,8 @@
 		"start": "next start",
 		"prepare": "husky install",
 		"format": "prettier --write .",
-      "lint": "eslint '*/**/*.{js,jsx,ts,tsx}' --fix",
-      "lint:fix": "npm run lint -- --fix"
+		"lint": "eslint '*/**/*.{js,jsx,ts,tsx}' --fix",
+		"lint:fix": "npm run lint -- --fix"
 	},
 	"dependencies": {
 		"@emotion/core": "^11.0.0",
