@@ -52,7 +52,7 @@ export default function Home({
 	return (
 		<Container>
 			<Head>
-				<title>Create Next App</title>
+				<title>My Blog</title>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 

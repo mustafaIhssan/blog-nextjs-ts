@@ -3,6 +3,7 @@ import {
 	GetStaticPropsContext,
 	InferGetStaticPropsType,
 } from 'next'
+import Head from 'next/head'
 import { PostType } from 'pages'
 
 export default function BlogPost({
@@ -10,6 +11,9 @@ export default function BlogPost({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
 	return (
 		<div>
+			<Head>
+				<title>{post.title}</title>
+			</Head>
 			<h1>{post.title}</h1>
 			<h1>{post.body}</h1>
 		</div>
