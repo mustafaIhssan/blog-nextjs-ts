@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
 import { InferGetStaticPropsType } from 'next'
 import Head from 'next/head'
+import Link from 'next/link'
 import xw from 'twin.macro'
 
 const title = 'My New Blog Support Typescript'
@@ -62,9 +63,11 @@ export default function Home({
 
 				<List>
 					{posts.map((post) => (
-						<ListItem key={post.id}>
-							<PostTile>{post.title}</PostTile>
-						</ListItem>
+						<Link key={post.id} href="/posts/[id]" as={`/posts/${post.id}`}>
+							<ListItem>
+								<PostTile>{post.title}</PostTile>
+							</ListItem>
+						</Link>
 					))}
 				</List>
 			</Main>
