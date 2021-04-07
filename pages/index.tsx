@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import { InferGetStaticPropsType } from 'next'
 import Head from 'next/head'
 import xw from 'twin.macro'
 
@@ -18,7 +19,7 @@ const Button = styled.button(xw`
 
 const Container = styled.div(xw`
   flex flex-col justify-center items-center
-  h-screen w-screen
+  min-h-screen w-screen
   p-0 px-2
 `)
 
@@ -31,7 +32,22 @@ const Title = styled.h1(xw`
   m-0 leading-normal text-6xl
 `)
 
-export default function Home() {
+const List = styled.ul(xw`list-decimal`)
+
+const ListItem = styled.li(xw`
+  p-2 m-0 my-3
+  capitalize cursor-pointer 
+  text-gray-600
+  hover:bg-gray-200
+`)
+
+const PostTile = styled.h2(xw`
+  m-0 text-2xl
+`)
+
+export default function Home({
+	posts,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
 	return (
 		<Container>
 			<Head>
@@ -43,7 +59,33 @@ export default function Home() {
 				<Title>{title}</Title>
 
 				<Button>Emotion + Tailwind +</Button>
+
+				<List>
+					{posts.map((post) => (
+						<ListItem key={post.id}>
+							<PostTile>{post.title}</PostTile>
+						</ListItem>
+					))}
+				</List>
 			</Main>
 		</Container>
 	)
+}
+
+export type PostType = {
+	userId: number
+	id: number
+	title: string
+	body: string
+}
+
+export const getStaticProps = async () => {
+	const res = await fetch('https://jsonplaceholder.typicode.com/posts')
+	const posts: PostType[] = await res.json()
+
+	return {
+		props: {
+			posts,
+		},
+	}
 }
